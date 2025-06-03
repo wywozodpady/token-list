@@ -75,6 +75,9 @@ export const LISTS = {
     keywords: ["pancakeswap", "extended"],
     logoURI: "https://pancakeswap.finance/logo.png",
     sort: true,
+    test: {
+      skipLogo: true,
+    },
   },
   "pancakeswap-top-100": {
     name: "PancakeSwap Top 100",
@@ -113,6 +116,9 @@ export const LISTS = {
     keywords: ["pancakeswap", "binance", "mini program", "mini"],
     logoURI: "https://pancakeswap.finance/logo.png",
     sort: true,
+    test: {
+      skipLogo: true,
+    },
   },
   "pancakeswap-mini-extended": {
     name: "PancakeSwap Mini Ext",

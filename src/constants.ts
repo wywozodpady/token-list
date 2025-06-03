@@ -138,4 +138,16 @@ export const LISTS = {
     logoURI: "https://pancakeswap.finance/logo.png",
     sort: false,
   },
+  "pancakeswap-solana-default": {
+    name: "PancakeSwap Solana Default",
+    keywords: ["pancakeswap", "solana"],
+    logoURI: "https://pancakeswap.finance/logo.png",
+    sort: true,
+    schema: "solana",
+    test: {
+      skipLogo: true,
+      solana: true,
+      skipAddressChecksum: true,
+    },
+  },
 } as const;

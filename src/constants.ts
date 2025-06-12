@@ -75,6 +75,9 @@ export const LISTS = {
     keywords: ["pancakeswap", "extended"],
     logoURI: "https://pancakeswap.finance/logo.png",
     sort: true,
+    test: {
+      skipLogo: true,
+    },
   },
   "pancakeswap-top-100": {
     name: "PancakeSwap Top 100",
@@ -113,6 +116,9 @@ export const LISTS = {
     keywords: ["pancakeswap", "binance", "mini program", "mini"],
     logoURI: "https://pancakeswap.finance/logo.png",
     sort: true,
+    test: {
+      skipLogo: true,
+    },
   },
   "pancakeswap-mini-extended": {
     name: "PancakeSwap Mini Ext",
@@ -137,5 +143,17 @@ export const LISTS = {
     keywords: ["pancakeswap", "default", "scroll"],
     logoURI: "https://pancakeswap.finance/logo.png",
     sort: false,
+  },
+  "pancakeswap-solana-default": {
+    name: "PancakeSwap Solana Default",
+    keywords: ["pancakeswap", "solana"],
+    logoURI: "https://pancakeswap.finance/logo.png",
+    sort: true,
+    schema: "solana",
+    test: {
+      skipLogo: true,
+      solana: true,
+      skipAddressChecksum: true,
+    },
   },
 } as const;

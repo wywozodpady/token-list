@@ -50,6 +50,7 @@ const multiChainLogoPath = {
   [linea.id]: "/linea",
   [base.id]: "/base",
   [opbnb.id]: "/opbnb",
+  [101]: "/solana",
 };
 
 // Modified https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_get
@@ -157,6 +158,7 @@ for (const _case of cases) {
 describe("global test", () => {
   it("all logos addresses are valid and checksummed", async () => {
     for (const path_ of Object.values(multiChainLogoPath)) {
+      if (path_ === "/solana") return;
       const logoFiles = fs
         .readdirSync(path.join(path.resolve(), "lists", "images", path_), { withFileTypes: true })
         .filter((f) => f.isFile())
@@ -213,10 +215,10 @@ describe.each(cases)("buildList %s", async (listName, opt: any) => {
   });
 
   it("all addresses are valid and checksummed", () => {
-    if (!opt || !opt.aptos) {
-      for (const token of defaultTokenList.tokens) {
-        expect(token.address).toBe(getAddress(token.address));
-      }
+    if (!!opt?.aptos || !!opt?.skipAddressChecksum) return;
+
+    for (const token of defaultTokenList.tokens) {
+      expect(token.address).toBe(getAddress(token.address));
     }
   });
 
@@ -237,7 +239,7 @@ describe.each(cases)("buildList %s", async (listName, opt: any) => {
       const addressArray = defaultTokenList.tokens.map((token) => token.address);
       const chainId = defaultTokenList.tokens[0].chainId ?? 56;
       // FIXME: cmc is getting out of gas error. Skip for now
-      if (opt?.aptos === true || listName === "cmc" || listName === "coingecko") {
+      if (opt?.aptos === true || listName === "cmc" || listName === "coingecko" || !!opt?.solana) {
         // TODO: skip aptos test for now
         // const coinsData = await getAptosCoinsChainData(addressArray);
         // for (const token of defaultTokenList.tokens) {

@@ -41,19 +41,12 @@ For list to be considered valid it need to satisfy the following criteria:
 - All addresses are valid and checksummed (`bun checksum listName` automatically converts addresses to checksummed versions, it is also part of `bun makelist listName`)
 
 ## How to update Top100 Token list
+{
+  "name": "Epic Bitcoin",
+  "symbol": "EPB",
+  "address": "0x914f5Ad9A95eE95eF39Fb29CDe2aDd684d9CD6ab",
+  "chainId": 56,
+  "decimals": 18,
+  "logoURI": "https://your-logo-link-here.png"
+}
 
-Note - this is not something we expect pull requests for.
-
-```shell script
-# Fetch the Top100 Tokens on PancakeSwap v2, and update list.
-$ bun fetch pancakeswap-top-100
-
-# Build token list (pancakeswap-top-100.json)
-$ bun makelist pancakeswap-top-100
-```
-
-## Deploying
-
-Token lists will be auto-deployed via Cloudflare Pages when PR is merged to master. Be sure to build the list with `bun makelist list-name` before submitting/merging the PR since it doesn't make much sense building lists within Pages (because most errors are related to wrong token information and should be fixed prior to landing into master)
-
-Pages simply takes the json files under `lists` directory and hosts them on `tokens.pancakeswap.finance/list-name.json`

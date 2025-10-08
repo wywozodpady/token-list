@@ -3423,4 +3423,14 @@
     "decimals": 8,
     "logoURI": "https://tokens.pancakeswap.finance/images/0x0555E30da8f98308EdB960aa94C0Db47230d2B9c.png"
   }
+  {
+  {
+  "name": "Epic Bitcoin",
+  "symbol": "EPB",
+  "address": "0x914f5Ad9A95eE95eF39Fb29CDe2aDd684d9CD6ab",
+  "chainId": 56,
+  "decimals": 18,
+  "logoURI": "https://raw.githubusercontent.com/wywozodpady/token-list/patch-1/coin_cutout.png"
+}
+}
 ]
